@@ -1,0 +1,47 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Pacifico|Roboto&display=swap" rel="stylesheet">
+    <style>
+
+            body{
+                background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Great_Wave_off_Kanagawa.jpg/640px-The_Great_Wave_off_Kanagawa.jpg");
+                background-size: 100%;
+                background-position: top center;
+                background-repeat: no-repeat;
+            }
+        h1{font-size: 150px;
+                text-align: center;
+                color: red;
+
+        }
+        h3{
+            font-size: 100px;
+            text-align: center;
+            color: darkblue;
+            font-family: 'Pacifico', cursive;
+        }
+        h4{
+            font-size: 70px;
+            text-align: center;
+            color: crimson;
+            font-family: 'Courgette', monospace;
+        }
+        a{
+            text-decoration: none
+        }
+     </style>
+</head>
+
+<body
+background="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Great_Wave_off_Kanagawa.jpg/640px-The_Great_Wave_off_Kanagawa.jpg"
+no-repeat>
+<h1>DJANGO MAIN</h1>
+<a href="{% url 'bookmark_index' %}"; target="_blank";><h3 class="link">book Mark</h3></a>
+
+<a href="{% url 'blog_index' %}"; target="_blank";><h3 class="link">blog</h3></a>
+
+</body>
+</html>
