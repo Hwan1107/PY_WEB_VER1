@@ -2,16 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Post List</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Pattaya&display=swap" rel="stylesheet">
     {%  load staticfiles %}
+    <style>
+        .box{
+            width: 400px; height: auto;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            display: inline-block;
+            margin-left: 50px;
+            margin-bottom: 20px;
+        }
+        img{
+            width: 380px; height: 380px;
+            margin: auto; display: block;
+        }
+        p{
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: 'Nanum Gothic',  sans-serif;
+            font-size: 20px;
+        }
+        .description{
+            height: 100px;
+        }
+        .box_title{
+            text-align: center;
+            margin: 10px;
+            font-family: 'Pattaya', sans-serif;
+            font-size: 30px;
+            color: orangered;
+        }
+        #title{
+            text-align: center;
+            font-family: 'Pattaya', sans-serif;
+            font-size: 130px;
+        }
+        #title_small{
+            font-size: 30px;
+            color: dimgray;
+        }
+        .label{
+            font-family: 'Pattaya' sans-serif;
+            color: orangered;
+        }
+    </style>
 </head>
 <body>
 
 <div id="content">
+    <h1 id="title">Blog <span id="title_small">with Django</span></h1>
+
     {% for post in object_list %}
-        <p>{{post.title}}</p>
-        <img src="{{post.image.url}}">
-        <p>{{post.description}}</p>
+    <div class="box">
+        <p class="box_title">{{post.title}}</p>
+        <div class="imgBox">
+            <img src="{{post.image.url}}">
+        </div>
+
+        <p class="description"><span class="label">
+Description:</span>{{post.description}}</p>
+    <p><span class="label">Create Date:
+</span>{{post.description}}</p>
+    <p><span class="label">Modify Date:
+</span>{{post.description}}</p>
+    </div>
     {% endfor %}
 </div>
 
