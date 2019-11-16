@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Yeon+Sung&display=swap" rel="stylesheet">    <script>
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hwan1107.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+</script>
+    <style>
+    p{
+    font-family: 'Yeon Sung', cursive;
+    font-size:25px;
+    }
+    h1{
+    font-family: 'Black Han Sans', cursive;
+    font-size:40px;
+    }
+    </style>
+</head>
+<body>
+
+<div id="content">
+    <a href="{% url 'blog_update' object.id %}">Update?</a>
+    <a href="{% url 'blog_delete' object.id %}">delete?</a>
+    <h1>{{ object.title }}</h1>
+    <div class="box">
+        <p>Description: {{object.description}}</p>
+        <p>Create Date: {{object.create_date}}</p>
+        <p>Modify Date: {{object.Modify_date}}</p>
+        <img src="{{object.image.url}}" width="600" height="600">
+        <div id="disqus_thread"></div>
+
+</div>
+
+</body>
+</html>

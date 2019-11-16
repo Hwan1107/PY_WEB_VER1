@@ -1,0 +1,33 @@
+  {% extends "base.html" %}
+  {% load staticfiles %}
+  {% block content %}
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+              <form action="." method="post">{% csrf_token %}
+                {% if form.errors %}
+                    <p>에러발생. 입력정보 오류</p>
+                {% endif %}
+
+                <div class="form_row">
+                    {{ form.username.label_tag }} {{ form.username }}
+                </div>
+                 <div class="form_row">
+                    {{ form.password1.label_tag }} {{ form.password1 }}
+                </div>
+                 <div class="form_row">
+                    {{ form.password2.label_tag }} {{ form.password2 }}
+                </div>
+                <div class="form_row">
+                <button type="submit">Register</button>
+                </div>
+            </form>
+
+          </div>
+          <div class="col-sm-3"></div>
+      </div>
+  </div>
+
+
+ {% endblock content %}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Post List</title>
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Pattaya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Pattaya|Black+Han+Sans|Yeon+Sung&display=swap" rel="stylesheet">
     {%  load staticfiles %}
     <style>
         .box{
@@ -30,11 +30,11 @@
         .box_title{
             text-align: center;
             margin: 10px;
-            font-family: 'Pattaya', sans-serif;
+            font-family: 'Black Han Sans', sans-serif;
             font-size: 30px;
             color: orangered;
         }
-        #title{
+        .title{
             text-align: center;
             font-family: 'Pattaya', sans-serif;
             font-size: 130px;
@@ -47,18 +47,39 @@
             font-family: 'Pattaya' sans-serif;
             color: orangered;
         }
+        body{
+        background-color: lightgray;
+        }
+        h1{
+            margin:0px;
+        }
+        #t2, #title_small{
+            padding:0px;
+            height:100px;
+            margin:0px;
+        }
+        .title2{
+
+            text-align: center;
+            font-family: 'Pattaya', sans-serif;
+
+        }
+        div{
+
+        }
     </style>
 </head>
 <body>
 
 <div id="content">
-    <h1 id="title">Blog <span id="title_small">with Django</span></h1>
-
+    <h1 class="title">Mathematics Blog</h1>
+    <h5 class="title2" id="t2"><span id="title_small">made with Django</span></h5>
+    <h3 class="text-center"><a href="{% url 'blog_add' %}">Generate</a> </h3>
     {% for post in object_list %}
     <div class="box">
         <p class="box_title">{{post.title}}</p>
         <div class="imgBox">
-            <img src="{{post.image.url}}">
+            <a href="{% url 'blog_detail' post.id %}"> <img src="{{post.image.url}}">   </a>
         </div>
 
         <p class="description"><span class="label">
